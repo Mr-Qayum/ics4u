@@ -7,7 +7,7 @@ const email = ref("");
 
 const getData = () => {
   done.value = true;
-}
+};
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const getData = () => {
     <form @submit.prevent="getData()">
       <input type="text" placeholder="Name" v-model="name" />
       <input type="email" placeholder="Email" v-model="email" />
-      <input type="submit" value="Register" />
+      <slot />
     </form>
     <div v-if="done" class="submitted">
       <p>You submitted:</p>
