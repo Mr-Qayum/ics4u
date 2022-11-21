@@ -1,8 +1,11 @@
 <script setup>
 import axios from "axios";
+import { ref, watch } from "vue";
 
+const weather = ref(null);
 const props = defineProps(["city", "latitude", "longitude"]);
-const weather = (
+
+weather.value = (
   await axios.get("https://api.open-meteo.com/v1/forecast", {
     params: {
       latitude: props.latitude,
@@ -13,7 +16,7 @@ const weather = (
 ).data;
 let condition = "";
 
-switch (weather.current_weather.weathercode) {
+switch (weather.value.current_weather.weathercode) {
   case 0:
     condition = "Clear sky";
     break;
@@ -23,6 +26,21 @@ switch (weather.current_weather.weathercode) {
     condition = "Mainly clear, partly cloudy, and overcast";
     break;
 }
+
+watch(
+  () => props.latitude,
+  async () => {
+    weather.value = (
+      await axios.get("https://api.open-meteo.com/v1/forecast", {
+        params: {
+          latitude: props.latitude,
+          longitude: props.longitude,
+          current_weather: true,
+        },
+      })
+    ).data;
+  }
+);
 </script>
 
 <template>
