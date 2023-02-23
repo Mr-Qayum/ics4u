@@ -4,117 +4,50 @@
   box-sizing: border-box;
 }
 
-/* Styling for basic CSS Grid (id: main1) */
-
-#main1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  justify-items: center;
-  align-items: center;
-  gap: 5px;
-  background-color: yellow;
-  height: 500px;
-  width: 500px;
-}
-
-#main1 .box {
-  border: solid 1px white;
-  background-color: purple;
-  height: 50px;
-  width: 50px;
-}
-
-/* Styling for CSS Grid with coordinates (id: main2) */
-
-#main2 {
+#main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(15, 1fr);
   gap: 1rem;
   height: 100vh;
   width: 100vw;
   background-color: yellow;
 }
 
-#main2 .title {
+#main .title {
   text-align: center;
   background-color: purple;
   color: white;
   font-size: 50px;
 }
 
-#main2 header {
+#main header {
   grid-column: 1 / 13;
   grid-row: 1 / span 2;
 }
 
-#main2 section {
+#main section {
   grid-column: span 12;
   grid-row: span 4;
 }
 
-#main2 article {
-  grid-column: span 4;
+#main article {
+  grid-column: span 12;
   grid-row: span 3;
 }
 
-#main2 footer {
+#main footer {
   grid-column: span 12;
   grid-row: span 1;
 }
 
-/* Styling for CSS Grid with coordinates (id: main3)*/
+@media (min-width: 1025px) and (orientation: landscape) {
+  #main {
+    grid-template-rows: repeat(10, 1fr);
+  }
 
-#main3 {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-template-areas:
-    "header header header header header header header header header header header header"
-    "header header header header header header header header header header header header"
-    "section section section section section section section section section section section section"
-    "section section section section section section section section section section section section"
-    "section section section section section section section section section section section section"
-    "section section section section section section section section section section section section"
-    "article-1 article-1 . . article-2 article-2 article-2 article-2 article-3 article-3 article-3 article-3"
-    "article-1 article-1 . . article-2 article-2 article-2 article-2 article-3 article-3 article-3 article-3"
-    "article-1 article-1 . . article-2 article-2 article-2 article-2 article-3 article-3 article-3 article-3"
-    "footer footer footer footer footer footer footer footer footer footer footer footer "
-  ;
-  gap: 1rem;
-  height: 100vh;
-  width: 100vw;
-  background-color: yellow;
-}
-
-#main3 .title {
-  text-align: center;
-  background-color: purple;
-  color: white;
-  font-size: 50px;
-}
-
-#main3 header {
-  grid-area: header;
-}
-
-#main3 section {
-  grid-area: section;
-}
-
-#main3 #article-1 {
-  grid-area: article-1;
-}
-
-#main3 #article-2 {
-  grid-area: article-2;
-}
-
-#main3 #article-3 {
-  grid-area: article-3;
-}
-
-#main3 footer {
-  grid-area: footer;
+  #main article {
+    grid-column: span 4;
+    grid-row: span 3;
+  }
 }
