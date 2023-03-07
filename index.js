@@ -1,10 +1,3 @@
-function click() {
-  console.log("hi1");
-  show = !show;  
-  section.style.display = show ? "block" : "none";
-  button.innerHTML = show ? "Hide List" : "Show List";
-}
-
 const title = document.getElementById("title");
 title.style.color = "green";
 title.style.textAlign = "center";
@@ -49,12 +42,17 @@ button.style.marginTop = "2rem"
 let show = true;
 
 button.addEventListener('click', () => {
-  show = !show;  
+  show = !show;
   section.style.display = show ? "block" : "none";
   button.innerHTML = show ? "Hide List" : "Show List";
 })
 
-
 document.body.appendChild(button);
 
+const button2 = document.createElement("button");
+button2.innerHTML = "Enlarge Text";
+document.body.appendChild(button2);
 
+button2.addEventListener('click', () => {
+  title.style.cssText = "font-size: 100px; transition: font-size 2s"
+})
