@@ -22,7 +22,6 @@ const message = () => {
     <br />
     <input type="submit" value="Click"/>
   </form>
-  {{ checked }}
 </template>
 
 <style scoped></style>

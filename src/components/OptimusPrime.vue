@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <div id="main">
+  <div id="optimus-container">
     <p>{{ count }}</p>
     <button @click="hide()">Hide</button>
     <img v-if="isVisible" class="optimus"
@@ -22,7 +22,7 @@
 </template>
 
 <style scoped>
-#main {
+#optimus-container {
   display: flex;
   flex-direction: column;
   align-items: center;
