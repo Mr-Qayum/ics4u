@@ -2,6 +2,7 @@
 import OptimusPrime from "./components/OptimusPrime.vue";
 import Form from "./components/Form.vue";
 import Blog from "./components/Blog.vue";
+import Weather from "./components/Weather.vue";
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import Blog from "./components/Blog.vue";
     <Blog />
     <OptimusPrime />
     <Form />
+    <Weather />
   </div>
 </template>
 

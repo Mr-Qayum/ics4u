@@ -3,7 +3,7 @@ import { blogs } from "./server";
 </script>
 
 <template>
-  <div>
+  <div class="blog-container">
     <section v-for="(blog, index) in blogs" :key="index">
       <h1>{{ blog.title }}</h1>
       <h3>{{ blog.date }}</h3>
@@ -12,4 +12,9 @@ import { blogs } from "./server";
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.blog-container {
+  border-style: solid;
+  border-radius: 1;
+}
+</style>
