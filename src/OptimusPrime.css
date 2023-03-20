@@ -1,0 +1,10 @@
+#optimus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.optimus {
+  width: 25%;
+  aspect-ratio: 2 / 3;
+}
