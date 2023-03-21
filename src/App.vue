@@ -6,12 +6,14 @@ import Weather from "./components/Weather.vue";
 </script>
 
 <template>
-  <div id="main">
-    <Blog />
-    <OptimusPrime />
-    <Form />
-    <Weather />
-  </div>
+  <Suspense>
+    <div id="main">
+      <Blog />
+      <OptimusPrime />
+      <Form />
+      <Weather />
+    </div>
+  </Suspense>
 </template>
 
 <style scoped>

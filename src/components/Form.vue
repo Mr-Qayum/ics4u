@@ -27,5 +27,6 @@ const message = () => {
 <style scoped>
 .form-container {
   border-style: solid;
+  padding: 1rem;
 }
 </style>

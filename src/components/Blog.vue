@@ -16,5 +16,6 @@ import { blogs } from "./server";
 .blog-container {
   border-style: solid;
   border-radius: 1;
+  padding: 1rem;
 }
 </style>

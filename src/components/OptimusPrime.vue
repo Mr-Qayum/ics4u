@@ -30,6 +30,7 @@ const hide = () => {
   flex-direction: column;
   align-items: center;
   border-style: solid;
+  padding: 1rem;
 }
 
 .optimus {
