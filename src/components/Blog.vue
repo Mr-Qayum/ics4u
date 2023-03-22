@@ -1,5 +1,5 @@
 <script setup>
-import { blogs } from "./server";
+import { blogs } from "../utils/server";
 </script>
 
 <template>
