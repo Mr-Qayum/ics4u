@@ -1,0 +1,13 @@
+.tile {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  border-style: solid;
+  border-radius: 1rem;
+  border-color: crimson;
+}
+
+img {
+  width: 200px;
+}
