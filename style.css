@@ -1,3 +1,10 @@
+#movies {
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .tile {
   display: flex;
   padding: 1rem;
@@ -10,4 +17,12 @@
 
 img {
   width: 200px;
+}
+
+button {
+  border-radius: 0.5rem;
+  background-color: red;
+  color: white;
+  padding: 0.5rem;
+  align-self: end;
 }
