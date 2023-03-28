@@ -26,8 +26,7 @@ const createMovieTile = (id, poster, title, date, description) => {
 
   buyButton.addEventListener('click', () => {
     cartContents.add(id);
-    const cart = document.getElementById("cart-info");
-    console.log(cart);
+    const cart = document.getElementById("cart");
     cart.innerHTML = `Your cart contains ${cartContents.size} movies`;
   })
 
@@ -57,11 +56,6 @@ const createMovieTile = (id, poster, title, date, description) => {
 
 let movieData = await getTMDBData(`https://api.themoviedb.org/3//movie/top_rated?api_key=${TMDB_API_KEY}&language=en-US&adult=false`);
 const movies = document.getElementById("movies");
-
-const cart = document.createElement("h1");
-cart.id = "cart-info";
-cart.innerHTML = `Your cart contains ${cartContents.size} movies`;
-document.body.appendChild(cart);
 
 movieData.results.forEach(movie => {
   const tile = createMovieTile(movie.id, movie.poster_path, movie.title, movie.release_date, movie.overview);
