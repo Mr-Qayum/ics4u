@@ -3,6 +3,7 @@ import BlogView from "../views/BlogView.vue"
 import FunView from "../views/FunView.vue"
 import InfoView from "../views/InfoView.vue"
 import RootView from "../views/RootView.vue"
+import ErrorView from "../views/ErrorView.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +23,10 @@ const router = createRouter({
     {
       path: "/info",
       component: InfoView,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: ErrorView,
     },
   ],
 });
