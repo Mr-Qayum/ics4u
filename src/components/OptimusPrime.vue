@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from "vue";
+import { useStore } from "../store";
 
+const store = useStore();
 const isVisible = ref(true);
 const count = ref(0);
 
 const hide = () => {
+  store.user = "Optimus Prime"
+  store.greeting();
   isVisible.value = !isVisible.value;
   if (!isVisible.value) {
     count.value++;
@@ -14,6 +18,7 @@ const hide = () => {
 
 <template>
   <div id="optimus-container">
+    <h1>{{ store.user }}</h1>
     <p>{{ count }}</p>
     <button @click="hide()">Hide</button>
     <img

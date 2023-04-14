@@ -1,9 +1,13 @@
 <script setup>
 import { blogs } from "../utils/server";
+import { useStore } from "../store";
+
+const store = useStore();
 </script>
 
 <template>
   <div class="blog-container">
+    <h1>{{ store.user }}</h1>
     <section v-for="(blog, index) in blogs" :key="index">
       <h1>{{ blog.title }}</h1>
       <h3>{{ blog.date }}</h3>
