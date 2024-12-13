@@ -7,6 +7,8 @@ import MoviesView from "../src/views/MoviesView";
 import AllMoviesView from "../src/views/AllMoviesView";
 import DetailMovieView from "../src/views/DetailMovieView";
 import CartView from "../src/views/CartView";
+import ErrorView from "./views/ErrorView";
+import ProtectedRoutes from "./util/ProtectedRoutes";
 import './App.css'
 
 function App() {
@@ -18,11 +20,14 @@ function App() {
           <Route path="/" element={<HomeView />} />
           <Route path="/register" element={<RegisterView />} />
           <Route path="/login" element={<LoginView />} />
-          <Route path="/cart" element={<CartView />} />
-          <Route path="/movies" element={<MoviesView />}>
-            <Route path="all" element={<AllMoviesView />} />
-            <Route path=":id" element={<DetailMovieView />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/cart" element={<CartView />} />
+            <Route path="/movies" element={<MoviesView />}>
+              <Route path="all" element={<AllMoviesView />} />
+              <Route path=":id" element={<DetailMovieView />} />
+            </Route>
           </Route>
+          <Route path="*" element={<ErrorView />} />
         </Routes>
       </BrowserRouter>
     </StoreProvider>

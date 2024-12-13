@@ -1,0 +1,22 @@
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e50914;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  margin: 0;
+}
+
+/* Add some animation for flair */
+h1 {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
