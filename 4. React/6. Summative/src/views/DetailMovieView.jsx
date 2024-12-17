@@ -7,8 +7,16 @@ import "./DetailMovieView.css"
 function DetailMovieView() {
 
   const [movie, setMovie] = useState([]);
-  const { cart, setCart } = useStoreContext();
+  const { user, cart, setCart } = useStoreContext();
   const params = useParams();
+
+  const addToCart = () => {
+    setCart((prevCart) => {
+      const cart = prevCart.set(params.id, { title: movie.original_title, url: movie.poster_path });
+      localStorage.setItem(`cart_${user.email}`, JSON.stringify(cart.toJS()));
+      return cart;
+    });
+  }
 
   useEffect(() => {
     (async function getMovie() {
@@ -21,7 +29,7 @@ function DetailMovieView() {
 
   return (
     <div className="movie-detail">
-      <button onClick={() => setCart((prevCart) => prevCart.set(params.id, { title: movie.original_title, url: movie.poster_path }))} className="buy-button">Buy</button>
+      <button onClick={() => addToCart()} className="buy-button">Buy</button>
       <h1 className="movie-title">{movie.original_title}</h1>
       <p className="movie-overview">{movie.overview}</p>
       <div className="movie-info">
