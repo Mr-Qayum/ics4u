@@ -1,12 +1,20 @@
 import { useStoreContext } from "../context";
+import { firestore } from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
 import "./Cartview.css";
 
 function CartView() {
-  const { cart, setCart } = useStoreContext();
+  const { user, cart, setCart } = useStoreContext();
+
+  const checkout = async () => {
+    const docRef = doc(firestore, "users", user.uid);
+    await setDoc(docRef, cart.toJS());
+  }
 
   return (
     <div className="cart-view">
       <h1>Shopping Cart</h1>
+      <button onClick={() => checkout()}>Checkout</button>
       <div className="cart-items">
         {
           cart.entrySeq().map(([key, value]) => {
