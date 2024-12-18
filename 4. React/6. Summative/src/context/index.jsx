@@ -12,10 +12,13 @@ export const StoreProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      setUser(user);
-      const sessionCart = localStorage.getItem(`cart_${user.email}`);
-      if (sessionCart) {
-        setCart(Map(JSON.parse(sessionCart)));
+      if (user) {
+        setUser(user);
+
+        const sessionCart = localStorage.getItem(`cart_${user.email}`);
+        if (sessionCart) {
+          setCart(Map(JSON.parse(sessionCart)));
+        }
       }
       setLoading(false);
     });
