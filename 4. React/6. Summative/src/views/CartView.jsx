@@ -9,6 +9,11 @@ function CartView() {
   const checkout = async () => {
     const docRef = doc(firestore, "users", user.uid);
     await setDoc(docRef, cart.toJS());
+
+    // Code to read from Friestore
+    // const docRef = doc(firestore, "users", user.uid);
+    // const data = (await getDoc(docRef)).data();
+    // const cart = Map(data);
   }
 
   return (
