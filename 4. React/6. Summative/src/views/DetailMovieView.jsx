@@ -13,7 +13,7 @@ function DetailMovieView() {
   const addToCart = () => {
     setCart((prevCart) => {
       const cart = prevCart.set(params.id, { title: movie.original_title, url: movie.poster_path });
-      localStorage.setItem(`cart_${user.email}`, JSON.stringify(cart.toJS()));
+      localStorage.setItem(user.uid, JSON.stringify(cart.toJS()));
       return cart;
     });
   }

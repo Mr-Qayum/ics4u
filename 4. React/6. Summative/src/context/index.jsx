@@ -14,7 +14,7 @@ export const StoreProvider = ({ children }) => {
     onAuthStateChanged(auth, user => {
       if (user) {
         setUser(user);
-        const sessionCart = localStorage.getItem(`cart_${user.email}`);
+        const sessionCart = localStorage.getItem(user.uid);
         if (sessionCart) {
           setCart(Map(JSON.parse(sessionCart)));
         }
