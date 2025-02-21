@@ -143,3 +143,150 @@ array1.pop(); // removes the last value in the array and returns it
 array1.push(10); // adds 10 to the end of the array
 array1.shift(); // removes the first value in the array and returns it
 array1.unshift(10); // adds 10 to the front of the array
+
+// OBJECTS
+// 1. Objects can store key and values as pairs
+// 2. Keys can be accessed using the "." operator or array-like syntax (e.g. objectName["keyName"])
+// 3. They can use the spread operator and be destructured
+// 4. They also have useful built-in functions like keys, values, entries and freeze
+// 5. They can have functions defined within them as well
+
+// creates an object with specified key value pairs
+const object1 = {
+  name: "Bill Gates",
+  age: 71,
+  company: "Microsoft",
+  role: "CEO",
+  isEvil: true,
+  cars: ["BMW", "Ferrari", "Audi"],
+  pythagoreanTheorem1: function (a, b) {
+    return Math.sqrt(a * a + b * b);
+  },
+  pythagoreanTheorem2 (a, b) {
+    return Math.sqrt(a * a + b * b);
+  },
+  pythagoreanTheorem3: (a,b) => {
+    return Math.sqrt(a * a + b * b);
+  }
+};
+
+// creates another object with specified key value pairs
+const object2 = {
+  address: "99 Rich Blvd.",
+  hair: "white",
+}
+
+// spreads the contents of object1 and object2 into a new object
+const object3 = {
+  ...object1,
+  ...object2,
+}
+
+// destructures the specified keys into variables called hair, role and cars, respectively
+const { hair, role, cars } = object3;
+
+object1.age; // gets the value of the age key
+object1.name = "Steve Jobs" // changes the value of the name key to "Steve Jobs"
+delete object1.name; // deletes the name key/value pair from the object
+object1["age"] // also gets the value of the age key using array-like syntax
+object1["name"] = "Steve Jobs" // also changes the value of the name key to "Steve Jobs"
+delete object1["name"] // also deletes the name key/value pair from the object
+
+Object.keys(object1); // returns all the keys inside the object
+Object.values(object1); // returns all the values inside the object
+Object.entries(object1); // returns all the key/value pairs inside the object
+Object.freeze(object1); // freezes the objects values from being changed
+
+// CONDITIONAL STATEMENTS
+// 1. Conditional statements allow code to execute, or not execute, when one or more conditions are met
+// 2. The condition(s) should evaluate to a boolean value
+
+let age = 18;
+const citizen = true;
+const height = 149;
+const foods = ["hamburgers", "pizzas", "meatballs", "hot dogs"]
+
+// the if-else statement is used for binary situations
+if (age >= 18 && citizen && height >= 150) {
+  console.log("You can vote!");
+} else {
+  console.log("You can not vote!");
+}
+
+// the ternary operator is preferred to the else-if whenever possible
+//     if (age % 2 == 0) {
+//       age *= 2;
+//     } else {
+//       age /= 2;
+//     }
+age = age % 2 == 0 ? age * 2 : age / 2; // if age is even, multiply it by 2, otherwise, divide it by 2
+
+// the else-if statement is used for non-binary situations
+if (age < 18) {
+  console.log("You don't know what you are doing!");
+} else if (!citizen) {
+  console.log("You don't live here!");
+} else if (height < 150) {
+  console.log("You need to drink milk!")
+} else {
+  console.log("You can vote!");
+}
+
+// the switch statement is preferred to the else-if statement when conditions have fixed values; it works with strings, numbers, decimals and many others
+switch (foods[3]) {
+  case "hamburgers":
+    console.log("I love burgers!");
+    break;
+  case "pizzas":
+    console.log("I love pinapple pizza!");
+    break;
+  case "meatballs":
+    console.log("I love beef!");
+    break;
+  case "hot dogs":
+    console.log("I love animals too much!");
+    break;
+  default:
+    console.log("Invalid food!");
+}
+
+// LOOP STATEMENTS
+// 1. Loops statements allow blocks of code to execute multiple times (iterate), until some condition is met
+// 2. Loops should always modify their condition within their code block, otherwise an infinite loop will occur
+
+let loop = 10;
+
+// loops until the value of loop reaches 0; it checks the condition before first execution
+while (loop > 0) {
+  loop--;
+}
+
+// loops until the value of loop reaches 0,; it checks the condition after first execution
+do {
+  loop--;
+} while (loop > 0);
+
+// loops a finite number of times; the counter (i) starts at 4, increases by 2 each time and then stops when it reaches 10
+for (let i = 4; i < 10; i += 2) {
+  console.log(i);
+}
+
+// loops through the entire foods array
+for (let i = 0; i < foods.length; i++) {
+  console.log(foods[i]);
+}
+
+// a better way to loop through an array; use the for-of with arrays only
+for (const food of foods) {
+  console.log(food);
+}
+
+// another way to loop through an array using the array's built-in forEach function
+foods.forEach((food, index) => {
+  console.log(`At index=${index}, we have ${food}`);
+})
+
+// use the for-in with objects only
+for (const item in object1) {
+  console.log(`${item} has ${object1[item]}`);
+}
