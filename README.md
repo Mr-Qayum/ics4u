@@ -24,6 +24,6 @@
 # Tools:  
 **CSS Battle** - https://cssbattle.dev/  
 **Can I Use** - https://caniuse.com/  
-**Dummy API** - https://reqres.in/  
+**Dummy API** - https://dummyjson.com/  
 **Postman** - https://www.postman.com/  
 **TMDB API** - https://www.themoviedb.org/  
