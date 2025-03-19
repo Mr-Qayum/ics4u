@@ -290,3 +290,77 @@ foods.forEach((food, index) => {
 for (const item in object1) {
   console.log(`${item} has ${object1[item]}`);
 }
+
+// ASYNCHRONOUS CODE
+// 1. JavaScript uses asynchronous programming to handle operations that take time (e.g., API requests, file I/O) without blocking the execution of other code. 
+// 2. This allows the program to remain responsive while waiting for these operations to complete.
+// 3. JavaScript uses the Promise object to handle this.
+
+// Create a Promise that takes 10 seconds to resolve
+function fetchData1() {
+  return new Promise((resolve, reject) => {
+      console.log("Fetching data...");
+
+      setTimeout(() => {
+          const success = true;
+
+          if (success) {
+              resolve({ user: "Mark Carney", honest: false });
+          } else {
+              reject("User not found");
+          }
+      }, 10000);
+  });
+}
+
+// Create a Promise that takes 5 seconds to resolve
+function fetchData2() {
+  return new Promise((resolve, reject) => {
+      console.log("Fetching data...");
+
+      setTimeout(() => {
+          const success = true;
+
+          if (success) {
+              resolve({ user: "Pierre P", honest: false });
+          } else {
+              reject("User not found");
+          }
+      }, 5000);
+  });
+}
+
+// Executing promises using then-catch-finally clause
+fetchData1().then((data) => {
+  console.log(data);
+}).catch((error) => {
+  console.log(error);
+}).finally(() => {
+  console.log("Finally!");
+});
+
+// Waits for both promises to finish
+Promise.all([fetchData1(), fetchData2()]).then((data) => {
+  console.log(data);
+});
+
+// Waits for the promise that finishes first
+Promise.race([fetchData1(), fetchData2()]).then((data) => {
+  console.log(data);
+});
+
+
+// Execution of a promise using async-await (syntactic sugar)
+// This code does the same thing as the then-catch-finally clause
+async function getLeaderData() {
+  try {
+      const data = await fetchData1();
+      console.log(data);
+  } catch (error) {
+      console.log(error);
+  } finally {
+      console.log("Finally!");
+  }
+}
+
+getLeaderData();
