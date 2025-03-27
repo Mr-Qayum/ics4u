@@ -1,0 +1,38 @@
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.movie-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    width: 200px;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.movie-poster {
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.movie-poster:hover {
+    opacity: 0.8;
+}

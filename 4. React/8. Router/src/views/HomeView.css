@@ -1,0 +1,37 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .home-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .home-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .home-link-item {
+    margin-bottom: 15px;
+  }
+  
+  .home-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #4f6cff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .home-link:hover {
+    color: #3e58e7;
+  }
+  
