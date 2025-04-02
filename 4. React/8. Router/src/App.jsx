@@ -7,6 +7,7 @@ import MoviesView from './views/MoviesView';
 import ErrorView from './views/ErrorView';
 import MovieTileView from './views/MovieTileView';
 import MovieDetailView from './views/MovieDetailView';
+import ProtectedRoutes from './views/ProtectedRoutes';
 
 function App() {
 
@@ -16,12 +17,14 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/login" element={<LoginView />} />
         <Route path="/register" element={<RegisterView />} />
-        <Route path="/movies" element={<MoviesView />}>
-          <Route path="now_playing" element={<MovieTileView />}></Route>
-          <Route path="popular" element={<MovieTileView />}></Route>
-          <Route path="top_rated" element={<MovieTileView />}></Route>
-          <Route path="upcoming" element={<MovieTileView />}></Route>
-          <Route path=":id" element={<MovieDetailView />}></Route>
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/movies" element={<MoviesView />}>
+            <Route path="now_playing" element={<MovieTileView />}></Route>
+            <Route path="popular" element={<MovieTileView />}></Route>
+            <Route path="top_rated" element={<MovieTileView />}></Route>
+            <Route path="upcoming" element={<MovieTileView />}></Route>
+            <Route path=":id" element={<MovieDetailView />}></Route>
+          </Route>
         </Route>
         <Route path="*" element={<ErrorView />} />
       </Routes>

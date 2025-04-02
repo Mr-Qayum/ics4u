@@ -7,7 +7,7 @@ export default function RegisterView() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/movies');
+    navigate('/movies/now_playing');
   };
 
   return (
