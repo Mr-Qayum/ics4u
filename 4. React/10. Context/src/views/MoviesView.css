@@ -1,0 +1,38 @@
+.movies-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .movies-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .movies-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #ddd;
+  }
+  
+  .movies-content {
+    padding: 20px;
+    border-top: 2px solid #ccc;
+  }
+  
+  a.active {
+    color: red;
+  }
