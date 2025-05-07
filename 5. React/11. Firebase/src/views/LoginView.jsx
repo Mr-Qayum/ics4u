@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useStoreContext } from '../context';
+import { useNavigate } from 'react-router-dom';
 import './LoginView.css';
 
 export default function LoginView() {
     const [form, setForm] = useState({ email: '', password: '' });
     const { setUser } = useStoreContext();
+    const navigate = useNavigate();
 
     const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -15,7 +17,7 @@ export default function LoginView() {
         try {
             const result = await signInWithEmailAndPassword(auth, form.email, form.password);
             setUser(result.user);
-            console.log("User logged in OK!");
+            navigate("/authenticated");
         } catch (error) {
             console.error("Login error:", error.message);
         }
@@ -26,6 +28,7 @@ export default function LoginView() {
         try {
             const result = await signInWithPopup(auth, provider);
             setUser(result.user);
+            navigate("/authenticated");
         } catch (error) {
             console.error("Google sign-in error:", error.message);
         }

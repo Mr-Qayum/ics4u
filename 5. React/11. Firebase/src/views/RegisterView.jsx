@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useStoreContext } from '../context';
+import { useNavigate } from 'react-router-dom';
 import "./RegisterView.css";
 
 export default function RegisterView() {
     const [form, setForm] = useState({ username: '', email: '', password: '' });
     const { setUser } = useStoreContext();
+    const navigate = useNavigate();
 
     const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -16,6 +18,7 @@ export default function RegisterView() {
         try {
             const result = await createUserWithEmailAndPassword(auth, form.email, form.password);
             setUser(result.user);
+            navigate("/authenticated");
         } catch (error) {
             console.error("Error creating user:", error);
         }
