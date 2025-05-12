@@ -10,7 +10,6 @@ export const StoreProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [cart, setCart] = useState(Map());
 
-
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
