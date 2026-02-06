@@ -1,0 +1,127 @@
+/* Cascading Style Sheets (CSS)
+
+   Styling is done in one of the following ways:
+    1. Browser Defaults
+    2. External CSS (Preferred)
+    3. Internal CSS
+    4. Inline CSS
+  
+   Note: A style's priority (specificity) increases as you go down the list.
+
+   All HTML elements follow the box model as follows:
+    1. The element's content is at the center
+    2. The content is surrounded by padding
+    3. The padding is surrounded by border
+    4. The border is surrounded by margin
+
+   Styles can be added by using:
+    1. The universal selector (*)
+    2. The type selector (e.g. div, p or a)
+    3. The class selector
+    4. The id selector
+    5. Combinator Selectors
+    6. Pseudo-Class Selectors
+    7. Pseudo-Element Selectors
+    8. Attribute Selectors
+
+*/
+
+/* External Styling */
+
+/* Selecting an element */
+h2 {
+    text-decoration: underline;
+    color: green;
+    padding: 50px;
+}
+
+/* Selecting a class */
+.test-1 {
+    font-size: 40px;
+}
+
+/* Selecting an ID */
+#test-2 {
+    text-decoration: overline;
+}
+
+/* Box model example */
+.box-model {
+    padding: 40px;
+    border-width: 2px;
+    border-style: dotted;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Rule for selecting two classes using AND logic */
+.bonus.discount {
+    background-color: yellow;
+}
+
+/* Rule for selecting two classes using OR logic */
+.sale,
+.clearance {
+    text-decoration: line-through;
+}
+
+/* Combinator Selectors */
+
+/* Rule for selecting descendants */
+ul li p {
+    color: red;
+}
+
+/* Rule for selecting children */
+.child > p {
+    color: red;
+}
+
+/* Rule for selecting adjacent siblings */
+.sibling section + p {
+    color: red;
+}
+
+/* Rule for selecting general siblings */
+.general-sibling p ~ p {
+    color: red;
+}
+
+/* Pseudo-Class Selectors */
+
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+ul li:nth-child(3) {
+    color: yellow;
+}
+
+/* Pseudo-Element Selectors */
+
+p::first-letter {
+    color: pink;
+}
+
+/* Attribute Selectors */
+
+a[target] {
+    color: gold;
+}
