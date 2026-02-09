@@ -9,16 +9,16 @@
 # Tutorials:  
 **HTML/CSS/JavaScript** - https://www.w3schools.com/  
 **CSS Box Model** - https://www.w3schools.com/css/css_boxmodel.asp  
-**CSS Flex** - https://css-tricks.com/snippets/css/a-guide-to-flexbox/  
-**CSS Grid** - https://css-tricks.com/snippets/css/complete-guide-grid/  
+**CSS Flex** - https://www.w3schools.com/css/css3_flexbox.asp  
+**CSS Grid** - https://www.w3schools.com/css/css_grid.asp  
 **JavaScript** - https://www.w3schools.com/js/default.asp  
 **Javascript DOM** - https://www.w3schools.com/js/js_htmldom.asp  
 
 # Guides:  
 **Axios** - https://www.npmjs.com/package/axios  
 **Vite** - https://vitejs.dev/  
-**Vue** - https://vuejs.org/  
-**Vue Router** - https://router.vuejs.org/guide/  
+**React** - https://react.dev/  
+**Vue Router** - https://reactrouter.com/  
 **Firebase** - https://firebase.google.com/docs/reference/js
 
 # Tools:  
