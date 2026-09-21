@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-optical-sizing: auto;
+}
+
+body {
+    padding: 100px;
+}
+
+h2 {
+    padding: 50px;
+    color: green;
+    text-decoration: underline;
+}
+
+.test-1 {
+    font-size: 40px;
+}
+
+#test-2 {
+    text-decoration: overline;
+}
+
+.box-model {
+    padding: 40px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.bonus.discount {
+    background-color: yellow;
+}
+
+.sale,
+.clearance {
+    text-decoration: line-through;
+}
+
+ul li p {
+    color: red;
+}
+
+.child>p {
+    color: red;
+}
+
+.sibling section+p {
+    color: red;
+}
+
+.general-sibling p~p {
+    color: red;
+}
+
+a:link {
+    color: #ff0000;
+}
+
+a:visited {
+    color: #00ff00;
+}
+
+a:hover {
+    color: #ff00ff;
+}
+
+a:active {
+    color: #0000ff;
+}
+
+ul li:nth-child(3) {
+    color: yellow;
+}
+
+p::first-letter {
+    color: pink;
+}
+
+a[target] {
+    color: gold;
+}
