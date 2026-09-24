@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.main {
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-areas:
+        "a a a a a a"
+        "b b b c c c"
+        "d d d d d d"
+        "e e e e e e"
+    ;
+    align-items: center;
+    justify-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+}
+
+.a {
+    grid-area: a;
+    background-color: red;
+}
+
+.b {
+    grid-area: b;
+    background-color: green;
+}
+
+.c {
+    grid-area: c;
+    background-color: blue;
+}
+
+.d {
+    grid-area: d;
+    background-color: violet;
+}
+
+.e {
+    grid-area: e;
+    background-color: orange;
+}
+
+@media (max-width: 1000px) {
+    .main {
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+        ;
+    }
+}
