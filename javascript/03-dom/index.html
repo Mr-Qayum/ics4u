@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        body {
+           @apply transition-colors duration-300;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            @apply bg-zinc-100 dark:bg-zinc-900 rounded-full;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            @apply bg-zinc-300 dark:bg-zinc-700 rounded-full transition-colors;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-zinc-400 dark:bg-zinc-600;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JavaScript DOM</title>
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen p-8 font-sans transition-colors duration-300">
+    <button id="theme-btn"
+        class="fixed top-6 right-6 z-50 bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-all font-medium">
+        Dark Mode
+    </button>
+    <div class="max-w-4xl mx-auto space-y-8">
+        <header class="text-center">
+            <h1 id="main-title"
+                class="text-5xl font-black text-indigo-600 dark:text-indigo-400 mb-2 transition-all duration-300">
+                JavaScript DOM
+            </h1>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+                class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <h2 class="text-xl font-bold mb-4 border-b border-zinc-100 dark:border-zinc-800 pb-2">Actions</h2>
+                <div class="flex flex-wrap gap-3" id="controls">
+                    <button id="add-btn"
+                        class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Add
+                        Item</button>
+                    <button id="clear-btn"
+                        class="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-600 transition">Clear
+                        List</button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <h2 class="text-xl font-bold mb-4 border-b border-zinc-100 dark:border-zinc-800 pb-2">List</h2>
+                <ul id="item-list" class="space-y-2 h-64 overflow-y-auto pr-2">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
