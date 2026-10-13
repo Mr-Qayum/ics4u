@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JavaScript Forms</title>
+</head>
+
+<body
+    class="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-6">
+    <div
+        class="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8 text-white">
+        <h1 class="text-3xl font-bold text-center mb-4">Quadratic Solver</h1>
+        <form id="quad-form" class="flex flex-col gap-4">
+            <div>
+                <label for="a" class="text-sm text-gray-300">a</label>
+                <input type="number" id="a" name="a" required
+                    class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20" />
+            </div>
+            <div>
+                <label for="b" class="text-sm text-gray-300">b</label>
+                <input type="number" id="b" name="b" required
+                    class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20" />
+            </div>
+            <div>
+                <label for="c" class="text-sm text-gray-300">c</label>
+                <input type="number" id="c" name="c" required
+                    class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20" />
+            </div>
+            <div>
+                <span class="text-sm text-gray-300">Roots:</span>
+                <span id="result" readonly class="w-full py-2 rounded-lg text-green-300 font-mono"></span>
+            </div>
+            <div>
+                <span class="text-sm text-gray-300">Discriminant:</span>
+                <span id="discriminant" readonly class="w-full py-2 rounded-lg text-yellow-300 font-mono"></span>
+            </div>
+            <div>
+                <span class="text-sm text-gray-300">Number of Roots:</span>
+                <span id="num-roots" readonly class="w-full py-2 rounded-lg text-blue-300 font-mono"></span>
+            </div>
+            <div>
+                <span class="text-sm text-gray-300">Vertex:</span>
+                <span id="vertex" readonly class="w-full py-2 rounded-lg text-purple-300 font-mono"></span>
+            </div>
+            <div>
+                <span class="text-sm text-gray-300">Axis of Symmetry:</span>
+                <span id="axis" readonly class="w-full py-2 rounded-lg text-pink-300 font-mono"></span>
+            </div>
+            <button type="submit"
+                class="flex-1 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-semibold">Calculate</button>
+        </form>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

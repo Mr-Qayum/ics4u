@@ -92,6 +92,4 @@ A typical DOM workflow includes:
 
 ## 🔧 Tech Stack
 
-- Vite
-- TypeScript
 - Tailwind CSS
